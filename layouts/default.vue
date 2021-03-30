@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import appMenu from "/components/appMenu";
-import appFooter from '../components/appFooter';
+import appMenu from "/components/AppMenu";
+import appFooter from '../components/AppFooter';
 export default {
   components: {
     appMenu,

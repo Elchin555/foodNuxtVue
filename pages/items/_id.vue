@@ -99,7 +99,6 @@ export default {
   computed: {
     ...mapState(["fooddata"]),
     currentItem() {
-      // more efficient than forEach because we can break
       let result;
 
       for (let i = 0; i < this.fooddata.length; i++) {

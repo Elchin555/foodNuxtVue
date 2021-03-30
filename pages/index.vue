@@ -8,8 +8,8 @@
 <script>
 import { mapState } from "vuex";
 
-import appHeader from "../components/appHeader";
-import appRestaurantInfo from "../components/appRestaurantInfo"
+import appHeader from "../components/AppHeader";
+import appRestaurantInfo from "../components/AppRestaurantInfo"
 export default {
   components: {
     appHeader,
