@@ -1,5 +1,8 @@
 <template>
   <footer>
-    <p>Copyright bla bla bla</p>
+    <p>Copyright information goes here.</p>
   </footer>
 </template>
+
+<style lang="scss" scoped>
+</style>

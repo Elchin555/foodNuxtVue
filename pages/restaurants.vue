@@ -6,20 +6,20 @@
       <app-select @change="selectedRestaurant = $event" :selectoptions="restaurantOptions" />
     </div>
 
-    <appRestaurantInfo :datasource="filteredRestaurants" />
+    <AppRestaurantInfo :datasource="filteredRestaurants" />
   </main>
 </template>
 
 <script>
-import appRestaurantInfo from "@/components/AppRestaurantInfo.vue";
+import AppRestaurantInfo from "@/components/AppRestaurantInfo.vue";
 import AppSelect from "@/components/AppSelect.vue";
 import { mapState } from "vuex";
 
 export default {
   components: {
     AppSelect,
-    appRestaurantInfo
-      
+    AppRestaurantInfo: () =>
+      import(/* webpackPrefetch: true */ "@/components/AppRestaurantInfo.vue"),
   },
   data() {
     return {

@@ -5,11 +5,11 @@
     <section class="details">
       <h1>{{ currentItem.item }}</h1>
 
-      <h3>Price: {{ currentItem.price.toFixed(2) }} AZN</h3>
+      <h3>Price: ${{ currentItem.price.toFixed(2) }}</h3>
 
       <div class="quantity">
         <input type="number" min="1" v-model="count" />
-        <button class="primary" @click="addToCart">Add to Cart - {{ combinedPrice }} AZN</button>
+        <button class="primary" @click="addToCart">Add to Cart - ${{ combinedPrice }}</button>
       </div>
 
       <fieldset v-if="currentItem.options">
@@ -44,10 +44,7 @@
         </div>
       </fieldset>
 
-      <app-toast v-if="cartSubmitted"
-      :style="{ backgroundColor: backgroundColor }"
-      
-      >
+      <app-toast v-if="cartSubmitted">
         Order Added!
         <br />Return to
         <nuxt-link to="/restaurants">restaurants</nuxt-link>
@@ -84,8 +81,6 @@ export default {
       itemSizeAndCost: [],
       cartSubmitted: false,
       errors: false,
-      backgroundColor:"green",
-
     };
   },
   validations: {
@@ -99,6 +94,7 @@ export default {
   computed: {
     ...mapState(["fooddata"]),
     currentItem() {
+      // more efficient than forEach because we can break
       let result;
 
       for (let i = 0; i < this.fooddata.length; i++) {

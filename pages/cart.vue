@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td colspan="3"></td>
-            <td class="total">Total: {{ totalPrice.toFixed(2) }} AZN</td>
+            <td class="total">Total: ${{ totalPrice.toFixed(2) }}</td>
           </tr>
         </tbody>
       </table>
